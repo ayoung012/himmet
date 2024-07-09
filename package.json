@@ -1,0 +1,25 @@
+{
+  "name": "himmet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoung012/himmet.git"
+  },
+  "author": "Adam Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayoung012/himmet/issues"
+  },
+  "homepage": "https://github.com/ayoung012/himmet#readme",
+  "description": "",
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3"
+  }
+}
