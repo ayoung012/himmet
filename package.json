@@ -1,9 +1,10 @@
 {
   "name": "himmet",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsc",
+    "serve": "node --env-file=.env dist/index.js",
     "test": "test"
   },
   "repository": {
@@ -19,7 +20,11 @@
   "description": "",
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
+    "@types/express": "^4.17.21",
     "@types/node": "^20.14.10",
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }
