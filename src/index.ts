@@ -25,7 +25,7 @@ app.get('/explore', async (req, res) => {
     exec(command, (error : any, stdout : any, stderr : any) => {
         if (error) {
             console.error(`exec error: ${error}`);
-            res.send(`exec error: ${error}\n\n$[stdout}\n${stderr}`);
+            res.send(`exec error: ${error}\n\n${stdout}\n${stderr}`);
             return;
         }
         res.send(`exec: ${stdout}\n ${stderr}`);
