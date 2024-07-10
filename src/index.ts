@@ -1,5 +1,4 @@
 import express from "express";
-const path = require('path');
 const bodyParser = require('body-parser');
 const { exec } = require('child_process');
 
@@ -8,8 +7,8 @@ const PORT = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const ap = 'public';
-const dir = path.join(__dirname, ap);
+const ap = "/public";
+const dir = __dirname + ap;
 app.use(ap, express.static(dir));
 
 app.get("/", async (req, res) => {
