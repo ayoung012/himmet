@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "build": "./gm.sh; ./imagemagick.sh; tsc",
+    "build": "./gm.sh; ./imagemagick.sh; tsc; mkdir dist/public",
     "serve": "node --env-file=.env dist/index.js",
     "test": "test"
   },

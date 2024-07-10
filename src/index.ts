@@ -7,6 +7,10 @@ const PORT = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const ap = 'public';
+const dir = path.join(__dirname, ap);
+app.use(ap, express.static(dir));
+
 app.get("/", async (req, res) => {
   res.send(`himmet ${process.env.NAME}.`);
 });
