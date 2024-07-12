@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "./gm.sh; ./imagemagick.sh; tsc; mkdir dist/public",
-    "serve": "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib node --env-file=.env dist/index.js",
+    "serve": "PATH=$PATH:$HOME/.local/bin LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib node --env-file=.env dist/index.js",
     "test": "test"
   },
   "repository": {
