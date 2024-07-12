@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 const { Worker } = require('worker_threads');
 
 // @ts-ignore
-const worker = new Worker(process[Symbol.for("ts-node.register.instance")] ? './src/worker.ts' : './worker.js');
+const worker = new Worker(process[Symbol.for("ts-node.register.instance")] ? './src/worker.ts' : __dirname + '/worker.js');
 
 worker.on('message', (result : String) => {
    console.log('result', result);
