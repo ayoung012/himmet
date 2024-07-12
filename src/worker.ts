@@ -1,5 +1,5 @@
 const { parentPort } = require('worker_threads');
-const himawari = require('himawari');
+const himawari = require('@ungoldman/himawari');
 
 const ap = "/public";
 const dir = __dirname + ap
