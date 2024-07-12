@@ -8,7 +8,6 @@ function generate() {
     const date = new Date();
     const fn = dir + '/hima-' + date.getTime().toString() + '.jpg';
     himawari({ zoom: 5,
-               date: date,
                parallel: true,
                outfile: fn
             });
