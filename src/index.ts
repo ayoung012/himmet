@@ -2,6 +2,20 @@ import express from "express";
 const bodyParser = require('body-parser');
 const { exec } = require('child_process');
 
+const { Worker } = require('worker_threads');
+
+// @ts-ignore
+const worker = new Worker(process[Symbol.for("ts-node.register.instance")] ? './src/worker.ts' : './worker.js');
+
+worker.on('message', (result : String) => {
+   console.log('result', result);
+});
+
+worker.on("error", (msg : String) => {
+    console.log(msg);
+});
+
+
 const app = express();
 const PORT = process.env.PORT;
 
@@ -35,15 +49,7 @@ app.get('/explore', async (req, res) => {
         res.send(`exec: ${stdout}\n ${stderr}`);
         return;
     });
-    return;
 
-    try {
-        const { stdout, stderr } = await exec(command);
-        res.send({ output: stdout, err: stderr });
-    } catch (error) {
-        console.error(error);
-        res.status(500).send({ error: error });
-    }
 });
 
 app.listen(PORT, async () => {
